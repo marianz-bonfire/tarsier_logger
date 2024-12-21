@@ -10,6 +10,7 @@ For general information about developing packages, see the Dart guide for
 and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages). 
 -->
+[![pub package](https://img.shields.io/pub/v/tarsier_logger.svg)](https://pub.dev/packages/tarsier_logger)
 
 ![Tarsier Logger Logo](https://raw.githubusercontent.com/marianz-bonfire/tarsier_logger/master/assets/demo.png)
 
