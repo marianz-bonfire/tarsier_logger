@@ -14,7 +14,7 @@ and the Flutter guide for
 [![package publisher](https://img.shields.io/pub/publisher/tarsier_logger.svg)](https://pub.dev/packages/tarsier_logger/publisher)
 
 
-<img height="200" src="https://raw.githubusercontent.com/marianz-bonfire/tarsier_logger/master/assets/logo.png">
+<img height="280" src="https://raw.githubusercontent.com/marianz-bonfire/tarsier_logger/master/assets/logo.png">
 
 
 A simple and customizable logger for Dart and Flutter applications. The `tarsier_logger` package helps you format log messages dynamically, add color-coded outputs, and manage consistent logging across your project.
