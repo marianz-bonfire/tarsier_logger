@@ -3,7 +3,7 @@ import 'package:test/test.dart';
 
 void main() {
   group('TarsierLogger', () {
-    final logger = TarsierLogger(maxLength: 50);
+    final logger = TarsierLogger(showIcon: true);
 
     test('Logs a plain message', () {
       expect(() => logger.l('Plain Message'), returnsNormally);

@@ -14,36 +14,36 @@ and the Flutter guide for
 [![package publisher](https://img.shields.io/pub/publisher/tarsier_logger.svg)](https://pub.dev/packages/tarsier_logger/publisher)
 
 
-![Tarsier Logger Logo](https://raw.githubusercontent.com/marianz-bonfire/tarsier_logger/master/assets/demo.png)
-
-
+<img height="200" src="https://raw.githubusercontent.com/marianz-bonfire/tarsier_logger/master/assets/logo.png">
 
 
 A simple and customizable logger for Dart and Flutter applications. The `tarsier_logger` package helps you format log messages dynamically, add color-coded outputs, and manage consistent logging across your project.
 
-## Features
+<img src="https://raw.githubusercontent.com/marianz-bonfire/tarsier_logger/master/assets/demo.png">
 
-- **Dynamic Padding**: Automatically adjusts padding with hyphens to align messages neatly.
+
+## ✨ Features
+
 - **Color-Coded Logs**: Supports ANSI color codes for enhanced readability in the terminal.
 - **Static and Instance-Based Logging**:
   - Instance-based logging for advanced customization.
   - Static logging for quick and convenient use.
-- **Customizable Max Line Length**: Control the overall length of log messages.
+- **Iconized Logs**: Shows icon of log messages.
 
 
-## Getting started
+## 🚀 Getting started
 
 Add `tarsier_logger` to your `pubspec.yaml`:
 ```bash
 dependencies:
-  tarsier_logger: ^1.0.0
+  tarsier_logger: ^1.0.1
 ```
 Run the following command to install the package:
 ```bash
 flutter pub get
 ```
 
-## Usage
+## 📒 Usage
 
 You can use an instance of the `TarsierLogger` class to log messages with dynamic padding and color coding.
 
@@ -51,6 +51,7 @@ You can use an instance of the `TarsierLogger` class to log messages with dynami
 import 'package:tarsier_logger/tarsier_logger.dart';
 
 final logger = TarsierLogger();
+//final logger = TarsierLogger(showIcon: true); //Show icons
 
 logger.i('This is an informational message.');
 logger.s('This is a success message.');
@@ -67,7 +68,6 @@ TarsierLogger.info("Static informational message.");
 TarsierLogger.success("Static success message.");
 TarsierLogger.warning("Static warning message.");
 TarsierLogger.error("Static error message.");
-
 ```
 
 ### Custom Messages with Colors
@@ -79,16 +79,16 @@ TarsierLogger.log('Custom Message with Blue Color', color: blue);
 ### Available Colors
 The following colors are built-in and can be used for customizing log messages:
 
-- `green`: Success messages
-- `red`: Error messages
-- `blue`: Informational messages
-- `yellow`: Warnings
-- `reset`: Resets to default terminal color
+- 🟢 `green`: Success messages
+- 🔴 `red`: Error messages
+- 🔵 `blue`: Informational messages
+- 🟡 `yellow`: Warnings
+- ⚪ `reset`: Resets to default terminal color
 
-###  License
+## 🎖️ License
 This package is licensed under the [MIT License](https://mit-license.org/).
 
-### Suggestions for Improvement?
+## 🐞Suggestions for Improvement?
 Feel free to open an issue or submit a pull request on [GitHub](https://github.com/marianz-bonfire/tarsier_logger).
 
 #### Why "Tarsier Logger"?

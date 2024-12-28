@@ -1,3 +1,7 @@
+## 1.0.1
++ Added
+    + Added log icon
+    + Fixed some lint issue for pub requirements
 ## 1.0.0
 + Added
     + Initial release of `tarsier_logger`.

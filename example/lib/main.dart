@@ -58,7 +58,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: Container(
                   width: 200,
                   alignment: Alignment.center,
-                  child: const Text("Log message", style: TextStyle(color: Colors.black87)),
+                  child: const Text("Log message",
+                      style: TextStyle(color: Colors.black87)),
                 ),
               ),
               SizedBox(height: 8.0),
@@ -72,7 +73,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: Container(
                   width: 200,
                   alignment: Alignment.center,
-                  child: const Text("Info message", style: TextStyle(color: Colors.white)),
+                  child: const Text("Info message",
+                      style: TextStyle(color: Colors.white)),
                 ),
               ),
               SizedBox(height: 8.0),
@@ -86,7 +88,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: Container(
                   width: 200,
                   alignment: Alignment.center,
-                  child: const Text("Warning message", style: TextStyle(color: Colors.white)),
+                  child: const Text("Warning message",
+                      style: TextStyle(color: Colors.white)),
                 ),
               ),
               SizedBox(height: 8.0),
@@ -100,7 +103,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: Container(
                   width: 200,
                   alignment: Alignment.center,
-                  child: const Text("Error message", style: TextStyle(color: Colors.white)),
+                  child: const Text("Error message",
+                      style: TextStyle(color: Colors.white)),
                 ),
               ),
               SizedBox(height: 10.0),
@@ -119,43 +123,53 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: Container(
                   width: 200,
                   alignment: Alignment.center,
-                  child: const Text("Log message", style: TextStyle(color: Colors.black87)),
+                  child: const Text("Log message",
+                      style: TextStyle(color: Colors.black87)),
                 ),
               ),
               SizedBox(height: 8.0),
               ElevatedButton(
-                onPressed: () {TarsierLogger.info('Log using static function info');},
+                onPressed: () {
+                  TarsierLogger.info('Log using static function info');
+                },
                 style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all(Colors.blue),
                 ),
                 child: Container(
                   width: 200,
                   alignment: Alignment.center,
-                  child: const Text("Info message", style: TextStyle(color: Colors.white)),
+                  child: const Text("Info message",
+                      style: TextStyle(color: Colors.white)),
                 ),
               ),
               SizedBox(height: 8.0),
               ElevatedButton(
-                onPressed: () {TarsierLogger.warning('Log using static function warning');},
+                onPressed: () {
+                  TarsierLogger.warning('Log using static function warning');
+                },
                 style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all(Colors.orange),
                 ),
                 child: Container(
                   width: 200,
                   alignment: Alignment.center,
-                  child: const Text("Warning message", style: TextStyle(color: Colors.white)),
+                  child: const Text("Warning message",
+                      style: TextStyle(color: Colors.white)),
                 ),
               ),
               SizedBox(height: 8.0),
               ElevatedButton(
-                onPressed: () {TarsierLogger.error('Log using static function error');},
+                onPressed: () {
+                  TarsierLogger.error('Log using static function error');
+                },
                 style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all(Colors.red),
                 ),
                 child: Container(
                   width: 200,
                   alignment: Alignment.center,
-                  child: const Text("Error message", style: TextStyle(color: Colors.white)),
+                  child: const Text("Error message",
+                      style: TextStyle(color: Colors.white)),
                 ),
               ),
             ],
