@@ -1,14 +1,37 @@
 import 'package:flutter/foundation.dart';
 import 'package:tarsier_logger/src/constants.dart';
 
+/// A singleton logger class for structured and color-coded logging.
+///
+/// `TarsierLogger` provides methods for logging different types of messages
+/// (info, success, warning, error) with optional emoji-based icons and color-coded
+/// outputs. The logger is optimized for debugging and can be initialized with
+/// specific settings.
+///
+/// Example:
+/// ```dart
+/// final logger = TarsierLogger(showIcon: true);
+/// logger.i('Application started');
+///
+///
+/// //TarsierLogger.info('Application started'); // using staticc method
+/// ```
 class TarsierLogger {
   /// Determines whether icons are displayed in the log messages.
   final bool showIcon;
 
+  /// Holds the singleton instance of the logger.
   static TarsierLogger? _instance;
 
+  /// Private constructor for internal use.
   TarsierLogger._internal({this.showIcon = false});
 
+  /// Factory constructor to initialize or retrieve the singleton instance.
+  ///
+  /// If `TarsierLogger` has already been initialized, subsequent calls with
+  /// different configurations (e.g., `showIcon`) will be ignored.
+  ///
+  /// - [showIcon]: Determines if emoji icons are included in log messages.
   factory TarsierLogger({bool showIcon = false}) {
     if (_instance == null) {
       _instance = TarsierLogger._internal(showIcon: showIcon);
