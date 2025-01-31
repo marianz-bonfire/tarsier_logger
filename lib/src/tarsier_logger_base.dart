@@ -1,82 +1,156 @@
-import 'package:flutter/foundation.dart';
-import 'package:tarsier_logger/src/constants.dart';
+import 'package:tarsier_logger/src/prints.dart';
 
 /// A singleton logger class for structured and color-coded logging.
 ///
-/// `TarsierLogger` provides methods for logging different types of messages
-/// (info, success, warning, error) with optional emoji-based icons and color-coded
-/// outputs. The logger is optimized for debugging and can be initialized with
-/// specific settings.
+/// `TarsierLogger` provides methods for logging different types of messages,
+/// including info, success, warning, error, and verbose logs. It supports
+/// optional emoji-based icons and color-coded outputs for better readability.
 ///
-/// Example:
+/// This logger is optimized for debugging and provides both static and
+/// instance-based methods.
+///
+/// Example usage:
 /// ```dart
-/// final logger = TarsierLogger(showIcon: true);
+/// final logger = TarsierLogger();
 /// logger.i('Application started');
 ///
-///
-/// //TarsierLogger.info('Application started'); // using staticc method
+/// // Using static methods
+/// TarsierLogger.info('Application started');
 /// ```
 class TarsierLogger {
-  /// Determines whether icons are displayed in the log messages.
-  final bool showIcon;
+  /// The singleton instance of `TarsierLogger`.
+  static final TarsierLogger _instance = TarsierLogger._internal();
 
-  /// Holds the singleton instance of the logger.
-  static TarsierLogger? _instance;
+  /// Private constructor to enforce singleton usage.
+  TarsierLogger._internal();
 
-  /// Private constructor for internal use.
-  TarsierLogger._internal({this.showIcon = false});
+  /// Factory constructor that returns the singleton instance.
+  factory TarsierLogger() => _instance;
 
-  /// Factory constructor to initialize or retrieve the singleton instance.
-  ///
-  /// If `TarsierLogger` has already been initialized, subsequent calls with
-  /// different configurations (e.g., `showIcon`) will be ignored.
-  ///
-  /// - [showIcon]: Determines if emoji icons are included in log messages.
-  factory TarsierLogger({bool showIcon = false}) {
-    if (_instance == null) {
-      _instance = TarsierLogger._internal(showIcon: showIcon);
-    } else if (_instance!.showIcon != showIcon) {
-      // Optional: Add a warning or handle reconfiguration
-      debugPrint(
-          'TarsierLogger already initialized. Ignoring new configuration.');
-    }
-    return _instance!;
-  }
-
-  static void info(String text) => _instance?.i(text);
-  static void success(String text) => _instance?.s(text);
-  static void warning(String text) => _instance?.w(text);
-  static void error(String text) => _instance?.e(text);
-  static void log(String text, {String? color}) =>
-      _instance?.l(text, color: color);
-
-  /// Prints a formatted log message with dynamic hyphen padding.
+  /// Logs an informational message.
   ///
   /// - [text]: The message to log.
-  /// - [color]: Optional color for the log text (use the ANSI color codes).
-  void l(String text, {String? color}) {
-    if (kDebugMode) {
-      print('${color ?? ''}$text$reset');
-    }
+  /// - [tag]: An optional tag to categorize the log message.
+  ///
+  /// Example:
+  /// ```dart
+  /// TarsierLogger.info('Fetching data from API');
+  /// ```
+  static void info(String text, [String tag = '']) => _instance.i(text, tag);
+
+  /// Logs a success message.
+  ///
+  /// - [text]: The success message.
+  /// - [tag]: An optional tag for categorization.
+  ///
+  /// Example:
+  /// ```dart
+  /// TarsierLogger.success('Data loaded successfully');
+  /// ```
+  static void success(String text, [String tag = '']) => _instance.s(text, tag);
+
+  /// Logs a warning message.
+  ///
+  /// - [text]: The warning message.
+  /// - [tag]: An optional tag for categorization.
+  ///
+  /// Example:
+  /// ```dart
+  /// TarsierLogger.warning('Low disk space');
+  /// ```
+  static void warning(String text, [String tag = '']) => _instance.w(text, tag);
+
+  /// Logs an error message.
+  ///
+  /// - [text]: The error message.
+  /// - [tag]: An optional tag for categorization.
+  /// - [stackTrace]: An optional stack trace for debugging errors.
+  ///
+  /// Example:
+  /// ```dart
+  /// try {
+  ///   throw Exception('Something went wrong');
+  /// } catch (e, stackTrace) {
+  ///   TarsierLogger.error(e.toString(), 'API', stackTrace);
+  /// }
+  /// ```
+  static void error(String text, [String tag = '', StackTrace? stackTrace]) =>
+      _instance.e(text, tag, stackTrace);
+
+  /// Logs a verbose/debug message.
+  ///
+  /// - [text]: The verbose message.
+  /// - [tag]: An optional tag for categorization.
+  ///
+  /// Example:
+  /// ```dart
+  /// TarsierLogger.verbose('Debugging connection issues');
+  /// ```
+  static void verbose(String text, [String tag = '']) => _instance.v(text, tag);
+
+  /// Logs a general message.
+  ///
+  /// - [text]: The log message.
+  /// - [tag]: An optional tag for categorization.
+  ///
+  /// Example:
+  /// ```dart
+  /// TarsierLogger.log('System initialized');
+  /// ```
+  static void log(String text, [String tag = '']) => _instance.l(text, tag);
+
+  /// Prints a formatted log message with optional categorization.
+  ///
+  /// - [text]: The log message.
+  /// - [tag]: An optional tag for organization.
+  ///
+  /// Example:
+  /// ```dart
+  /// final logger = TarsierLogger();
+  /// logger.l('User signed in', 'Auth');
+  /// ```
+  void l(String text, [String tag = '']) {
+    printLog(tag, text);
   }
 
-  /// Logs an info message in blue.
-  void i(String text) =>
-      l('[${showIcon ? defaultLevelEmojis[Level.info] : ''}INFO]: $text',
-          color: blue);
+  /// Logs an informational message in blue.
+  ///
+  /// - [text]: The info message.
+  /// - [tag]: An optional tag for categorization.
+  void i(String text, [String tag = '']) => printInfo(tag, text);
 
   /// Logs a success message in green.
-  void s(String text) =>
-      l('[${showIcon ? defaultLevelEmojis[Level.success] : ''}SUCCESS]: $text',
-          color: green);
+  ///
+  /// - [text]: The success message.
+  /// - [tag]: An optional tag for categorization.
+  void s(String text, [String tag = '']) => printSuccess(tag, text);
 
   /// Logs a warning message in yellow.
-  void w(String text) =>
-      l('[${showIcon ? defaultLevelEmojis[Level.warning] : ''}WARNING]: $text',
-          color: yellow);
+  ///
+  /// - [text]: The warning message.
+  /// - [tag]: An optional tag for categorization.
+  void w(String text, [String tag = '']) => printWarning(tag, text);
 
-  /// Logs an error message with stack trace in red.
-  void e(String text, [StackTrace? stackTrace]) => l(
-      '[${showIcon ? defaultLevelEmojis[Level.error] : ''}ERROR]: $text ${stackTrace ?? ''}',
-      color: red);
+  /// Logs a verbose/debug message in purple.
+  ///
+  /// - [text]: The verbose message.
+  /// - [tag]: An optional tag for categorization.
+  void v(String text, [String tag = '']) => printVerbose(tag, text);
+
+  /// Logs an error message with an optional stack trace in red.
+  ///
+  /// - [text]: The error message.
+  /// - [tag]: An optional tag for categorization.
+  /// - [stackTrace]: The stack trace, if applicable.
+  ///
+  /// Example:
+  /// ```dart
+  /// try {
+  ///   throw Exception('Critical failure');
+  /// } catch (e, stackTrace) {
+  ///   TarsierLogger().e(e.toString(), 'System', stackTrace);
+  /// }
+  /// ```
+  void e(String text, [String tag = '', StackTrace? stackTrace]) =>
+      printError(tag, '$text ${stackTrace != null ? ': $stackTrace' : ''}');
 }

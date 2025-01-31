@@ -1,3 +1,13 @@
+## 1.0.2
+* Updated environment SDK constraint
++ Added pubspec screenshot and topics
+* Modified README file
+* Enhance logging by adding more fore colors and back colors
+* Added more example in the readme
+* Constructed more detailed API Docs
+* Added alternative logging such `Console`
+* Added also logging similar to `print`
+
 ## 1.0.1
 + Added
     + Added log icon

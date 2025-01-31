@@ -3,30 +3,6 @@ import 'package:test/test.dart';
 
 void main() {
   group('TarsierLogger', () {
-    final logger = TarsierLogger(showIcon: true);
-
-    test('Logs a plain message', () {
-      expect(() => logger.l('Plain Message'), returnsNormally);
-    });
-
-    test('Logs an info message', () {
-      expect(() => logger.i('Info Message'), returnsNormally);
-    });
-
-    test('Logs a success message', () {
-      expect(() => logger.s('Success Message'), returnsNormally);
-    });
-
-    test('Logs a warning message', () {
-      expect(() => logger.w('Warning Message'), returnsNormally);
-    });
-
-    test('Logs an error message', () {
-      expect(() => logger.e('Error Message'), returnsNormally);
-    });
-  });
-
-  group('TarsierLogger with static function call: ', () {
     test('log', () {
       expect(() => TarsierLogger.log('Plain Message'), returnsNormally);
     });

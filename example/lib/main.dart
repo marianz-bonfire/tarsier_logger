@@ -43,11 +43,11 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Center(
           child: Column(
             children: [
-              Text(
+              const Text(
                 'Log message',
                 style: TextStyle(fontSize: 20.0),
               ),
-              SizedBox(height: 8.0),
+              const SizedBox(height: 8.0),
               ElevatedButton(
                 onPressed: () {
                   logger.l("This is sample log message");
@@ -62,10 +62,10 @@ class _MyHomePageState extends State<MyHomePage> {
                       style: TextStyle(color: Colors.black87)),
                 ),
               ),
-              SizedBox(height: 8.0),
+              const SizedBox(height: 8.0),
               ElevatedButton(
                 onPressed: () {
-                  logger.i("This is sample INFO message");
+                  logger.i("This is sample INFO message", "i Function");
                 },
                 style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all(Colors.blue),
@@ -77,7 +77,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       style: TextStyle(color: Colors.white)),
                 ),
               ),
-              SizedBox(height: 8.0),
+              const SizedBox(height: 8.0),
               ElevatedButton(
                 onPressed: () {
                   logger.w("This is sample WARNING message");
@@ -92,7 +92,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       style: TextStyle(color: Colors.white)),
                 ),
               ),
-              SizedBox(height: 8.0),
+              const SizedBox(height: 8.0),
               ElevatedButton(
                 onPressed: () {
                   logger.e("This is sample ERROR message");
@@ -107,12 +107,42 @@ class _MyHomePageState extends State<MyHomePage> {
                       style: TextStyle(color: Colors.white)),
                 ),
               ),
-              SizedBox(height: 10.0),
-              Text(
+              const SizedBox(height: 8.0),
+              ElevatedButton(
+                onPressed: () {
+                  TarsierLogger.success('This is sample SUCCESS message');
+                },
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(Colors.green),
+                ),
+                child: Container(
+                  width: 200,
+                  alignment: Alignment.center,
+                  child: const Text("Success message",
+                      style: TextStyle(color: Colors.white)),
+                ),
+              ),
+              const SizedBox(height: 8.0),
+              ElevatedButton(
+                onPressed: () {
+                  TarsierLogger.verbose('This is the sample VERBOSE message');
+                },
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(Colors.cyan),
+                ),
+                child: Container(
+                  width: 200,
+                  alignment: Alignment.center,
+                  child: const Text("Verbose message",
+                      style: TextStyle(color: Colors.white)),
+                ),
+              ),
+              const SizedBox(height: 10.0),
+              const Text(
                 'Log message using static functions',
                 style: TextStyle(fontSize: 20.0),
               ),
-              SizedBox(height: 8.0),
+              const SizedBox(height: 8.0),
               ElevatedButton(
                 onPressed: () {
                   TarsierLogger.log('Log using static function log');
@@ -127,7 +157,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       style: TextStyle(color: Colors.black87)),
                 ),
               ),
-              SizedBox(height: 8.0),
+              const SizedBox(height: 8.0),
               ElevatedButton(
                 onPressed: () {
                   TarsierLogger.info('Log using static function info');
@@ -142,7 +172,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       style: TextStyle(color: Colors.white)),
                 ),
               ),
-              SizedBox(height: 8.0),
+              const SizedBox(height: 8.0),
               ElevatedButton(
                 onPressed: () {
                   TarsierLogger.warning('Log using static function warning');
@@ -157,10 +187,12 @@ class _MyHomePageState extends State<MyHomePage> {
                       style: TextStyle(color: Colors.white)),
                 ),
               ),
-              SizedBox(height: 8.0),
+              const SizedBox(height: 8.0),
               ElevatedButton(
                 onPressed: () {
-                  TarsierLogger.error('Log using static function error');
+                  TarsierLogger.error(
+                    'Log using static function error',
+                  );
                 },
                 style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all(Colors.red),
@@ -169,6 +201,36 @@ class _MyHomePageState extends State<MyHomePage> {
                   width: 200,
                   alignment: Alignment.center,
                   child: const Text("Error message",
+                      style: TextStyle(color: Colors.white)),
+                ),
+              ),
+              const SizedBox(height: 8.0),
+              ElevatedButton(
+                onPressed: () {
+                  TarsierLogger.success('Log using static function success');
+                },
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(Colors.green),
+                ),
+                child: Container(
+                  width: 200,
+                  alignment: Alignment.center,
+                  child: const Text("Success message",
+                      style: TextStyle(color: Colors.white)),
+                ),
+              ),
+              const SizedBox(height: 8.0),
+              ElevatedButton(
+                onPressed: () {
+                  TarsierLogger.verbose('Log using static function verbose');
+                },
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(Colors.cyan),
+                ),
+                child: Container(
+                  width: 200,
+                  alignment: Alignment.center,
+                  child: const Text("Verbose message",
                       style: TextStyle(color: Colors.white)),
                 ),
               ),
