@@ -1,7 +1,5 @@
-/// {@nodoc}
 final String reset = '\x1B[0m';
 
-/// {@nodoc}
 class ForeColor {
   static final String black = '\x1B[30m';
 
@@ -20,7 +18,6 @@ class ForeColor {
   static final String orange = '\x1B[38;5;202m';
 }
 
-/// {@nodoc}
 class BackColor {
   static final String black = "\x1B[40m";
 

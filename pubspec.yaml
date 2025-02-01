@@ -1,6 +1,6 @@
 name: tarsier_logger
 description:  A simple and customizable logger for Dart applications with colorized outputs and dynamic formatting.
-version: 1.0.2
+version: 1.0.3
 homepage: https://github.com/marianz-bonfire/tarsier_logger
 repository: https://github.com/marianz-bonfire/tarsier_logger
 issue_tracker: https://github.com/marianz-bonfire/tarsier_logger/issues

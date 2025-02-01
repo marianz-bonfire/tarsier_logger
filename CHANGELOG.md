@@ -1,3 +1,7 @@
+## 1.0.3
+* Fixed warning on pub dev regarding ` Doc directive 'nodoc' is unknown.`
+
+
 ## 1.0.2
 * Updated environment SDK constraint
 + Added pubspec screenshot and topics

@@ -49,7 +49,7 @@ A simple and customizable logger for Dart and Flutter applications. The `tarsier
 Add `tarsier_logger` to your `pubspec.yaml`:
 ```bash
 dependencies:
-  tarsier_logger: ^1.0.2
+  tarsier_logger: ^1.0.3
 ```
 Run the following command to install the package:
 ```bash
