@@ -1,3 +1,9 @@
+## 1.1.1
+
+### Changed
+- Fixed issue on pub dev reported warning on "Missing type annotation"
+
+
 ## 1.1.0
 
 ### Changed

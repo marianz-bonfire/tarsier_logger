@@ -62,7 +62,7 @@ void printLog(String tag, String message, [String icon = '']) {
 /// This is used for logging critical issues or errors that need immediate attention.
 /// - [tag]: The tag categorizing the error (e.g., "APP_ERROR").
 /// - [message]: The error message to display.
-printError(String tag, String message, [String icon = '⛔']) {
+void printError(String tag, String message, [String icon = '⛔']) {
   printDebug(
       '${ForeColor.red}${"[$icon${BackColor.red}${ForeColor.black}${_formatInBrackets('ERROR', 16, false)}$reset${ForeColor.red}]${_formatInBrackets(tag)}: $message"}$reset');
 }
@@ -70,7 +70,7 @@ printError(String tag, String message, [String icon = '⛔']) {
 /// Prints an informational message in blue, often used for general logs or status updates.
 /// - [tag]: The tag categorizing the information (e.g., "APP_START").
 /// - [message]: The information message to display.
-printInfo(String tag, String message, [String icon = '💡']) {
+void printInfo(String tag, String message, [String icon = '💡']) {
   printDebug(
       '${ForeColor.blue}${"[$icon${BackColor.blue}${ForeColor.black}${_formatInBrackets('INFO', 16, false)}$reset${ForeColor.blue}]${_formatInBrackets(tag)}: $message"}$reset');
 }
@@ -78,7 +78,7 @@ printInfo(String tag, String message, [String icon = '💡']) {
 /// Prints a warning message in yellow, used for non-critical issues that may require attention.
 /// - [tag]: The tag categorizing the warning (e.g., "DEPRECATED").
 /// - [message]: The warning message to display.
-printWarning(String tag, String message, [String icon = '⚡']) {
+void printWarning(String tag, String message, [String icon = '⚡']) {
   printDebug(
       '${ForeColor.yellow}${"[$icon${BackColor.yellow}${ForeColor.black}${_formatInBrackets('WARNING', 16, false)}$reset${ForeColor.yellow}]${_formatInBrackets(tag)}: $message"}$reset');
 }
@@ -86,7 +86,7 @@ printWarning(String tag, String message, [String icon = '⚡']) {
 /// Prints a success message in green, commonly used for indicating successful actions or results.
 /// - [tag]: The tag categorizing the success (e.g., "UPLOAD_COMPLETE").
 /// - [message]: The success message to display.
-printSuccess(String tag, String message, [String icon = '✅']) {
+void printSuccess(String tag, String message, [String icon = '✅']) {
   printDebug(
       '${ForeColor.green}${"[$icon${BackColor.green}${ForeColor.black}${_formatInBrackets('SUCCESS', 16, false)}$reset${ForeColor.green}]${_formatInBrackets(tag)}: $message"}$reset');
 }
@@ -94,7 +94,7 @@ printSuccess(String tag, String message, [String icon = '✅']) {
 /// Prints a verbose or debug message in purple, used for detailed debugging or information that may be helpful during development.
 /// - [tag]: The tag categorizing the verbose message (e.g., "DEBUG").
 /// - [message]: The verbose message to display.
-printVerbose(String tag, String message, [String icon = '🚀']) {
+void printVerbose(String tag, String message, [String icon = '🚀']) {
   printDebug(
       '$reset${"[$icon${BackColor.cyan}${ForeColor.black}${_formatInBrackets('VERBOSE', 16, false)}$reset]${ForeColor.cyan}${_formatInBrackets(tag)}: $message"}$reset');
 }
