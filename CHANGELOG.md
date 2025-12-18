@@ -1,3 +1,13 @@
+## 1.1.0
+
+### Changed
+- Updated dependency versions to latest stable releases
+- Improved Dart 3 analysis and linting configuration
+
+  ### Notes
+    - This release contains no breaking changes
+    - Compatible with all Dart 3.x SDKs
+
 ## 1.0.3
 * Fixed warning on pub dev regarding ` Doc directive 'nodoc' is unknown.`
 

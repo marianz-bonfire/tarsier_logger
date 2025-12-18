@@ -6,7 +6,7 @@
 /// - Import this library in your Dart/Flutter project.
 /// - Initialize `TarsierLogger` as a singleton using the factory constructor.
 /// - Use the static methods (`info`, `success`, `warning`, `error`, `log`) for logging.
-library tarsier_logger;
+library;
 
 // Exporting library components
 export 'src/tarsier_logger_base.dart'; // Contains the core TarsierLogger class implementation.
