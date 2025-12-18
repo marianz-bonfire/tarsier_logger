@@ -53,7 +53,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   logger.l("This is sample log message");
                 },
                 style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(Colors.grey),
+                  backgroundColor: WidgetStateProperty.all(Colors.grey),
                 ),
                 child: Container(
                   width: 200,
@@ -68,7 +68,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   logger.i("This is sample INFO message", "i Function");
                 },
                 style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(Colors.blue),
+                  backgroundColor: WidgetStateProperty.all(Colors.blue),
                 ),
                 child: Container(
                   width: 200,
@@ -83,7 +83,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   logger.w("This is sample WARNING message");
                 },
                 style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(Colors.orange),
+                  backgroundColor: WidgetStateProperty.all(Colors.orange),
                 ),
                 child: Container(
                   width: 200,
@@ -98,7 +98,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   logger.e("This is sample ERROR message");
                 },
                 style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(Colors.red),
+                  backgroundColor: WidgetStateProperty.all(Colors.red),
                 ),
                 child: Container(
                   width: 200,
@@ -113,7 +113,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   TarsierLogger.success('This is sample SUCCESS message');
                 },
                 style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(Colors.green),
+                  backgroundColor: WidgetStateProperty.all(Colors.green),
                 ),
                 child: Container(
                   width: 200,
@@ -128,7 +128,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   TarsierLogger.verbose('This is the sample VERBOSE message');
                 },
                 style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(Colors.cyan),
+                  backgroundColor: WidgetStateProperty.all(Colors.cyan),
                 ),
                 child: Container(
                   width: 200,
@@ -148,7 +148,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   TarsierLogger.log('Log using static function log');
                 },
                 style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(Colors.grey),
+                  backgroundColor: WidgetStateProperty.all(Colors.grey),
                 ),
                 child: Container(
                   width: 200,
@@ -163,7 +163,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   TarsierLogger.info('Log using static function info');
                 },
                 style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(Colors.blue),
+                  backgroundColor: WidgetStateProperty.all(Colors.blue),
                 ),
                 child: Container(
                   width: 200,
@@ -178,7 +178,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   TarsierLogger.warning('Log using static function warning');
                 },
                 style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(Colors.orange),
+                  backgroundColor: WidgetStateProperty.all(Colors.orange),
                 ),
                 child: Container(
                   width: 200,
@@ -195,7 +195,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   );
                 },
                 style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(Colors.red),
+                  backgroundColor: WidgetStateProperty.all(Colors.red),
                 ),
                 child: Container(
                   width: 200,
@@ -210,7 +210,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   TarsierLogger.success('Log using static function success');
                 },
                 style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(Colors.green),
+                  backgroundColor: WidgetStateProperty.all(Colors.green),
                 ),
                 child: Container(
                   width: 200,
@@ -225,7 +225,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   TarsierLogger.verbose('Log using static function verbose');
                 },
                 style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(Colors.cyan),
+                  backgroundColor: WidgetStateProperty.all(Colors.cyan),
                 ),
                 child: Container(
                   width: 200,
